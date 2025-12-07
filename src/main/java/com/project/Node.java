@@ -6,12 +6,12 @@ public class Node<K, V>{
     private V value;
     private Node<K,V> prevNode;
     private Node<K,V> nextNode;
-    private long ttl;
+    private long expiresAt;
 
-    public Node(K key, V value, long ttl){
+    public Node(K key, V value, long expiresAt){
         this.key = key;
         this.value = value;
-        this.ttl = ttl;
+        this.expiresAt = expiresAt;
         this.prevNode = null;
         this.nextNode = null;
     }
@@ -22,6 +22,10 @@ public class Node<K, V>{
 
     public V getValue(){
         return value;
+    }
+
+    public long getExpiresAt() {
+        return expiresAt;
     }
 
     public Node<K, V> getPrevNode(){
@@ -42,6 +46,10 @@ public class Node<K, V>{
 
     public void setNextNode(Node<K,V> nextNode){
         this.nextNode = nextNode;
+    }
+
+    public void setExpiresAt(long expiresAt) {
+        this.expiresAt = expiresAt;
     }
 
 }

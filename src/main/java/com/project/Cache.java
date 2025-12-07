@@ -2,11 +2,11 @@ package com.project;
 
 public interface Cache<K,V> {
 
-    // get, set, invalidate, contains
+    // get, put, invalidate, contains
 
     public V get(K key);
 
-    public void set(K key, V value);
+    public void put(K key, V value, long ttl); // ttl in milliseconds;
 
     public boolean contains(K key);
 
